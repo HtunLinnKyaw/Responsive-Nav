@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        body{
+            background: #F5F5F5;
+        }
+        header{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            margin:auto;
+            background: #FFFFFF;
+            padding: 15px;
+            transition: 0.5s;
+        }
+        header:hover{
+            box-shadow: 0 0 15px rgba(0,0,0,0.05);
+        }
+        .brand{
+
+        }
+        .brand a{
+            font-size: 1.5rem;
+            font-weight: bolder;
+        }
+        .mobile-menu-btn{
+            display: none;
+            background: deepskyblue;
+            color: #ffffff;
+            padding: 10px 15px;
+            width: 50px;
+            border: none;
+            text-align: center;
+        }
+        .mobile-menu-btn:focus{
+            outline: none;
+        }
+
+        .nav{
+
+        }
+        .nav-list{
+            padding: 0;
+        }
+        .nav-list li{
+            list-style-type: none;
+            display: inline-block;
+        }
+        .nav-item{
+            background: deepskyblue;
+            color: #ffffff;
+            padding: 10px 15px;
+            width: 120px;
+            display: inline-block;
+            text-align: center;
+        }
+        header a{
+            color: deepskyblue;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+        @media screen and (max-width: 480px){
+            header{
+                width: 95%;
+                flex-wrap: wrap;
+            }
+            .mobile-menu-btn{
+                display: block;
+            }
+            .nav{
+                display: none;
+                width: 100%;
+                position: relative;
+            }
+            .nav-list li{
+                display: block;
+            }
+            .nav-item{
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .nav-item:first-child{
+                margin-top: 10px;
+            }
+            .show-nav {
+                display: block;
+                animation: showSlow 0.5s;
+                position: absolute;
+                z-index: -1;
+                top: 60px;
+                right: 0px;
+                background: #FFFFFF;
+                padding: 10px;
+                box-shadow: 0 0 0 rgba(0,0,0,0.15);
+            }
+
+            @keyframes showSlow {
+                 0%{
+                     transform: translateY(-100px);
+                 }
+                100%{
+                    transform: translateY(0);
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <a href="">MMS IT</a>
+        </div>
+        <button class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li>
+                    <a class="nav-item" href="">Home</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="">About</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="">Services</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="">Gallery</a>
+                </li>
+                <li>
+                    <a class="nav-item" href="">Contact Us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+<script>
+    let nav = document.querySelector("nav");
+    document.getElementsByClassName("mobile-menu-btn")[0].addEventListener("click",()=>nav.classList.toggle("show-nav"));
+</script>
+</body>
+</html>
